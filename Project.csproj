@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F52AD83F-5550-4171-88F5-2ED3618A7077}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Project</RootNamespace>
+    <AssemblyName>Project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Thanh Tu\Downloads\v4.5.2\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="201_frKháchHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frKháchHang.designer.cs">
+      <DependentUpon>201_frKháchHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="201_frKichThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frKichThuoc.designer.cs">
+      <DependentUpon>201_frKichThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="201_frMaMau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frMaMau.designer.cs">
+      <DependentUpon>201_frMaMau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="201_frNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frNhanVien.designer.cs">
+      <DependentUpon>201_frNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="201_frTimKiemKHTheoTen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frTimKiemKHTheoTen.designer.cs">
+      <DependentUpon>201_frTimKiemKHTheoTen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="201_frTKHDTHEONGAYLAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frTKHDTHEONGAYLAP.designer.cs">
+      <DependentUpon>201_frTKHDTHEONGAYLAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="201_frTKHDTHEOTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frTKHDTHEOTT.designer.cs">
+      <DependentUpon>201_frTKHDTHEOTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="276_frmHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmHD.Designer.cs">
+      <DependentUpon>276_frmHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="276_frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmLogin.Designer.cs">
+      <DependentUpon>276_frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsqlbanhang.cs" />
+    <Compile Include="276_frmDMSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmDMSP.Designer.cs">
+      <DependentUpon>276_frmDMSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="276_frmDSSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmDSSP.Designer.cs">
+      <DependentUpon>276_frmDSSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="276_frmCTHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmCTHD.Designer.cs">
+      <DependentUpon>276_frmCTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="276_frmHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmHinh.Designer.cs">
+      <DependentUpon>276_frmHinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="276_frmSearchSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmSearchSP.Designer.cs">
+      <DependentUpon>276_frmSearchSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="276_frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="276_frmMain.Designer.cs">
+      <DependentUpon>276_frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="internetconnection.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="201_frKháchHang.resx">
+      <DependentUpon>201_frKháchHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="201_frKichThuoc.resx">
+      <DependentUpon>201_frKichThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="201_frMaMau.resx">
+      <DependentUpon>201_frMaMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="201_frNhanVien.resx">
+      <DependentUpon>201_frNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="201_frTimKiemKHTheoTen.resx">
+      <DependentUpon>201_frTimKiemKHTheoTen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="201_frTKHDTHEONGAYLAP.resx">
+      <DependentUpon>201_frTKHDTHEONGAYLAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="201_frTKHDTHEOTT.resx">
+      <DependentUpon>201_frTKHDTHEOTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmDMSP.resx">
+      <DependentUpon>276_frmDMSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmDSSP.resx">
+      <DependentUpon>276_frmDSSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmCTHD.resx">
+      <DependentUpon>276_frmCTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmHD.resx">
+      <DependentUpon>276_frmHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmHinh.resx">
+      <DependentUpon>276_frmHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmLogin.resx">
+      <DependentUpon>276_frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmSearchSP.resx">
+      <DependentUpon>276_frmSearchSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="276_frmMain.resx">
+      <DependentUpon>276_frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
