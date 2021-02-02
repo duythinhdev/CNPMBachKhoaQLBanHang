@@ -141,6 +141,12 @@
     <Compile Include="276_frmMain.Designer.cs">
       <DependentUpon>276_frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="201_frmKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="201_frmKhuyenMai.Designer.cs">
+      <DependentUpon>201_frmKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="internetconnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="201_frMaMau.resx">
       <DependentUpon>201_frMaMau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="201_frmKhuyenMai.resx">
+      <DependentUpon>201_frmKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="201_frNhanVien.resx">
       <DependentUpon>201_frNhanVien.cs</DependentUpon>

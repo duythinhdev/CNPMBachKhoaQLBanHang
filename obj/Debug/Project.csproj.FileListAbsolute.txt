@@ -87,3 +87,4 @@ D:\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
 D:\Project\obj\Debug\Project.csproj.CopyComplete
 D:\Project\obj\Debug\Project.exe
 D:\Project\obj\Debug\Project.pdb
+D:\Project\obj\Debug\Project.KhuyenMai.resources
