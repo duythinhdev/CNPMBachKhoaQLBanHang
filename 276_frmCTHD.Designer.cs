@@ -96,7 +96,7 @@
             this.txtMaHĐ.Location = new System.Drawing.Point(195, 331);
             this.txtMaHĐ.Name = "txtMaHĐ";
             this.txtMaHĐ.ReadOnly = true;
-            this.txtMaHĐ.Size = new System.Drawing.Size(250, 34);
+            this.txtMaHĐ.Size = new System.Drawing.Size(250, 29);
             this.txtMaHĐ.TabIndex = 7;
             // 
             // label2
@@ -105,7 +105,7 @@
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(36, 336);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 23);
+            this.label2.Size = new System.Drawing.Size(59, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "MÃ HĐ";
             // 
@@ -115,7 +115,7 @@
             this.txtThanhTien.Location = new System.Drawing.Point(485, 485);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(213, 34);
+            this.txtThanhTien.Size = new System.Drawing.Size(213, 29);
             this.txtThanhTien.TabIndex = 14;
             // 
             // txtKhuyenMai
@@ -123,7 +123,7 @@
             this.txtKhuyenMai.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKhuyenMai.Location = new System.Drawing.Point(195, 272);
             this.txtKhuyenMai.Name = "txtKhuyenMai";
-            this.txtKhuyenMai.Size = new System.Drawing.Size(250, 34);
+            this.txtKhuyenMai.Size = new System.Drawing.Size(250, 29);
             this.txtKhuyenMai.TabIndex = 5;
             this.txtKhuyenMai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtKhuyenMai_KeyPress);
             // 
@@ -132,7 +132,7 @@
             this.txtSL.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSL.Location = new System.Drawing.Point(195, 214);
             this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(250, 34);
+            this.txtSL.Size = new System.Drawing.Size(250, 29);
             this.txtSL.TabIndex = 4;
             this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSL_KeyPress);
             // 
@@ -142,7 +142,7 @@
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(481, 439);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 23);
+            this.label6.Size = new System.Drawing.Size(90, 18);
             this.label6.TabIndex = 2;
             this.label6.Text = "TỔNG TIỀN";
             // 
@@ -152,7 +152,7 @@
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(36, 277);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 23);
+            this.label5.Size = new System.Drawing.Size(103, 18);
             this.label5.TabIndex = 2;
             this.label5.Text = "KHUYẾN MÃI";
             // 
@@ -162,7 +162,7 @@
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(36, 219);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 23);
+            this.label4.Size = new System.Drawing.Size(95, 18);
             this.label4.TabIndex = 2;
             this.label4.Text = "SỐ LƯỢNG";
             // 
@@ -172,7 +172,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(36, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 23);
+            this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã SP";
             // 
@@ -282,7 +282,7 @@
             "Hủy"});
             this.cbbTenNV.Location = new System.Drawing.Point(195, 513);
             this.cbbTenNV.Name = "cbbTenNV";
-            this.cbbTenNV.Size = new System.Drawing.Size(250, 34);
+            this.cbbTenNV.Size = new System.Drawing.Size(250, 29);
             this.cbbTenNV.TabIndex = 11;
             // 
             // cbbTrangThai
@@ -296,7 +296,7 @@
             "Hủy"});
             this.cbbTrangThai.Location = new System.Drawing.Point(485, 374);
             this.cbbTrangThai.Name = "cbbTrangThai";
-            this.cbbTrangThai.Size = new System.Drawing.Size(213, 34);
+            this.cbbTrangThai.Size = new System.Drawing.Size(213, 29);
             this.cbbTrangThai.TabIndex = 13;
             // 
             // dtpNgayLap
@@ -306,7 +306,7 @@
             this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayLap.Location = new System.Drawing.Point(195, 569);
             this.dtpNgayLap.Name = "dtpNgayLap";
-            this.dtpNgayLap.Size = new System.Drawing.Size(250, 34);
+            this.dtpNgayLap.Size = new System.Drawing.Size(250, 29);
             this.dtpNgayLap.TabIndex = 12;
             // 
             // btnThemMoiSp
@@ -332,7 +332,7 @@
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(36, 161);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 23);
+            this.label12.Size = new System.Drawing.Size(71, 18);
             this.label12.TabIndex = 2;
             this.label12.Text = "GIÁ BÁN";
             // 
@@ -342,7 +342,7 @@
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(481, 336);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 23);
+            this.label10.Size = new System.Drawing.Size(100, 18);
             this.label10.TabIndex = 2;
             this.label10.Text = "TRẠNG THÁI";
             // 
@@ -352,7 +352,7 @@
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(36, 577);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(109, 23);
+            this.label13.Size = new System.Drawing.Size(86, 18);
             this.label13.TabIndex = 2;
             this.label13.Text = "NGÀY LẬP";
             // 
@@ -362,7 +362,7 @@
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(36, 518);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 23);
+            this.label9.Size = new System.Drawing.Size(92, 18);
             this.label9.TabIndex = 2;
             this.label9.Text = "NHÂN VIÊN";
             // 
@@ -372,7 +372,7 @@
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(36, 454);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 23);
+            this.label8.Size = new System.Drawing.Size(40, 18);
             this.label8.TabIndex = 2;
             this.label8.Text = "SĐT";
             // 
@@ -382,7 +382,7 @@
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(36, 104);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 23);
+            this.label11.Size = new System.Drawing.Size(65, 18);
             this.label11.TabIndex = 2;
             this.label11.Text = "TÊN SP";
             // 
@@ -392,7 +392,7 @@
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(36, 394);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 23);
+            this.label7.Size = new System.Drawing.Size(65, 18);
             this.label7.TabIndex = 2;
             this.label7.Text = "TÊN KH";
             // 
@@ -401,7 +401,7 @@
             this.txtPhoneKH.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneKH.Location = new System.Drawing.Point(195, 448);
             this.txtPhoneKH.Name = "txtPhoneKH";
-            this.txtPhoneKH.Size = new System.Drawing.Size(250, 34);
+            this.txtPhoneKH.Size = new System.Drawing.Size(250, 29);
             this.txtPhoneKH.TabIndex = 9;
             this.txtPhoneKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPhoneKH_KeyPress);
             // 
@@ -410,7 +410,7 @@
             this.txtTenKH.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKH.Location = new System.Drawing.Point(195, 389);
             this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(250, 34);
+            this.txtTenKH.Size = new System.Drawing.Size(250, 29);
             this.txtTenKH.TabIndex = 8;
             // 
             // txtGiaBan
@@ -418,7 +418,7 @@
             this.txtGiaBan.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaBan.Location = new System.Drawing.Point(195, 153);
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(250, 34);
+            this.txtGiaBan.Size = new System.Drawing.Size(250, 29);
             this.txtGiaBan.TabIndex = 3;
             this.txtGiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtGiaBan_KeyPress);
             // 
@@ -427,7 +427,7 @@
             this.txtTenSP.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSP.Location = new System.Drawing.Point(195, 96);
             this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(250, 34);
+            this.txtTenSP.Size = new System.Drawing.Size(250, 29);
             this.txtTenSP.TabIndex = 2;
             // 
             // txtMaSP
@@ -435,7 +435,7 @@
             this.txtMaSP.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSP.Location = new System.Drawing.Point(195, 38);
             this.txtMaSP.Name = "txtMaSP";
-            this.txtMaSP.Size = new System.Drawing.Size(250, 34);
+            this.txtMaSP.Size = new System.Drawing.Size(250, 29);
             this.txtMaSP.TabIndex = 1;
             this.txtMaSP.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtMaSP_KeyDown);
             // 
@@ -508,12 +508,13 @@
             this.Column3,
             this.Column5});
             this.dgvCTHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCTHD.Location = new System.Drawing.Point(3, 18);
+            this.dgvCTHD.Location = new System.Drawing.Point(3, 15);
             this.dgvCTHD.Name = "dgvCTHD";
             this.dgvCTHD.RowHeadersWidth = 51;
             this.dgvCTHD.RowTemplate.Height = 24;
-            this.dgvCTHD.Size = new System.Drawing.Size(574, 441);
+            this.dgvCTHD.Size = new System.Drawing.Size(574, 444);
             this.dgvCTHD.TabIndex = 0;
+            this.dgvCTHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellContentClick);
             // 
             // Column1
             // 
@@ -552,7 +553,7 @@
             // 
             // frmCTHD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1326, 695);
             this.Controls.Add(this.groupBox1);
