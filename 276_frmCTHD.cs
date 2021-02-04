@@ -331,5 +331,10 @@ namespace Project
                 e.Handled = true;
             }
         }
+
+        private void dgvCTHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
