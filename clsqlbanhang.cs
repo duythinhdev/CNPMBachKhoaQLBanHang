@@ -15,7 +15,7 @@ namespace Project
         public static MySqlConnection GetDBConnection()
         {
             string host = "localhost";
-            int port = 3306;
+            int port = 3308;
             string database = "sneaker";
             string username = "root";
             string password = "";
@@ -47,7 +47,7 @@ namespace Project
             da.Fill(ds);
             return ds;
         }
-
+            
         public int UpdateData(string sql)
         {
             MySqlCommand cmd = GetDBConnection().CreateCommand();
