@@ -147,6 +147,12 @@
     <Compile Include="201_frmKhuyenMai.Designer.cs">
       <DependentUpon>201_frmKhuyenMai.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSanPhamKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSanPhamKhuyenMai.Designer.cs">
+      <DependentUpon>frmSanPhamKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="internetconnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="276_frmMain.resx">
       <DependentUpon>276_frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSanPhamKhuyenMai.resx">
+      <DependentUpon>frmSanPhamKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
