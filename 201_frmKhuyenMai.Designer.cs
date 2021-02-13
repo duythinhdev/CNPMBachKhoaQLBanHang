@@ -33,10 +33,13 @@ namespace Project
             this.dtgrKhuyenMai = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.grbText = new System.Windows.Forms.GroupBox();
+            this.rdbTat = new System.Windows.Forms.RadioButton();
+            this.rdbBat = new System.Windows.Forms.RadioButton();
             this.txtTrangThai = new System.Windows.Forms.Label();
             this.lblIdKhuyenMai = new System.Windows.Forms.Label();
             this.txtIdDiscount = new System.Windows.Forms.TextBox();
@@ -44,8 +47,10 @@ namespace Project
             this.lblTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNameDiscount = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             btnDon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
@@ -65,24 +70,31 @@ namespace Project
             // dtgrKhuyenMai
             // 
             this.dtgrKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgrKhuyenMai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             this.dtgrKhuyenMai.Location = new System.Drawing.Point(31, 321);
             this.dtgrKhuyenMai.Name = "dtgrKhuyenMai";
             this.dtgrKhuyenMai.Size = new System.Drawing.Size(727, 284);
             this.dtgrKhuyenMai.TabIndex = 0;
             this.dtgrKhuyenMai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrKhuyenMai_CellClick);
-            this.dtgrKhuyenMai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrKhuyenMai_CellContentClick);
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(247, 23);
+            this.label1.Location = new System.Drawing.Point(1, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 46);
+            this.label1.Size = new System.Drawing.Size(774, 57);
             this.label1.TabIndex = 1;
             this.label1.Text = "Khuyến Mãi Sản Phẩm";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grbChucNang
             // 
+            this.grbChucNang.Controls.Add(this.btnSave);
             this.grbChucNang.Controls.Add(btnDon);
             this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnXoa);
@@ -93,7 +105,16 @@ namespace Project
             this.grbChucNang.TabIndex = 2;
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức Năng";
-            this.grbChucNang.Enter += new System.EventHandler(this.grbChucNang_Enter);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(91, 154);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 40);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSua
             // 
@@ -128,8 +149,8 @@ namespace Project
             // 
             // grbText
             // 
-            this.grbText.Controls.Add(this.checkBox2);
-            this.grbText.Controls.Add(this.checkBox1);
+            this.grbText.Controls.Add(this.rdbTat);
+            this.grbText.Controls.Add(this.rdbBat);
             this.grbText.Controls.Add(this.txtTrangThai);
             this.grbText.Controls.Add(this.lblIdKhuyenMai);
             this.grbText.Controls.Add(this.txtIdDiscount);
@@ -142,6 +163,30 @@ namespace Project
             this.grbText.Size = new System.Drawing.Size(418, 213);
             this.grbText.TabIndex = 3;
             this.grbText.TabStop = false;
+            // 
+            // rdbTat
+            // 
+            this.rdbTat.AutoSize = true;
+            this.rdbTat.Location = new System.Drawing.Point(222, 143);
+            this.rdbTat.Name = "rdbTat";
+            this.rdbTat.Size = new System.Drawing.Size(41, 17);
+            this.rdbTat.TabIndex = 10;
+            this.rdbTat.TabStop = true;
+            this.rdbTat.Text = "Tắt";
+            this.rdbTat.UseVisualStyleBackColor = true;
+            this.rdbTat.CheckedChanged += new System.EventHandler(this.rdbTat_CheckedChanged);
+            // 
+            // rdbBat
+            // 
+            this.rdbBat.AutoSize = true;
+            this.rdbBat.Location = new System.Drawing.Point(131, 143);
+            this.rdbBat.Name = "rdbBat";
+            this.rdbBat.Size = new System.Drawing.Size(41, 17);
+            this.rdbBat.TabIndex = 9;
+            this.rdbBat.TabStop = true;
+            this.rdbBat.Text = "Bật";
+            this.rdbBat.UseVisualStyleBackColor = true;
+            this.rdbBat.CheckedChanged += new System.EventHandler(this.rdbBat_CheckedChanged);
             // 
             // txtTrangThai
             // 
@@ -160,7 +205,6 @@ namespace Project
             this.lblIdKhuyenMai.Size = new System.Drawing.Size(77, 13);
             this.lblIdKhuyenMai.TabIndex = 7;
             this.lblIdKhuyenMai.Text = "ID Khuyến Mãi";
-            this.lblIdKhuyenMai.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtIdDiscount
             // 
@@ -168,7 +212,6 @@ namespace Project
             this.txtIdDiscount.Name = "txtIdDiscount";
             this.txtIdDiscount.Size = new System.Drawing.Size(173, 20);
             this.txtIdDiscount.TabIndex = 6;
-            this.txtIdDiscount.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // txtMoneyDiscount
             // 
@@ -202,29 +245,34 @@ namespace Project
             this.txtNameDiscount.Name = "txtNameDiscount";
             this.txtNameDiscount.Size = new System.Drawing.Size(173, 20);
             this.txtNameDiscount.TabIndex = 0;
-            this.txtNameDiscount.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // checkBox1
+            // Column1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(131, 143);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(38, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "on";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.Column1.DataPropertyName = "idDiscount";
+            this.Column1.HeaderText = "Mã Khuyến Mãi";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
             // 
-            // checkBox2
+            // Column2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(190, 143);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(38, 17);
-            this.checkBox2.TabIndex = 10;
-            this.checkBox2.Text = "off";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.Column2.DataPropertyName = "nameDiscount";
+            this.Column2.HeaderText = "Tên Khuyến Mãi";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 140;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "moneyDiscount";
+            this.Column3.HeaderText = "Tiền Khuyến Mãi ";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 160;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "status";
+            this.Column4.HeaderText = "Trạng Thái";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 160;
             // 
             // KhuyenMai
             // 
@@ -256,13 +304,18 @@ namespace Project
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox grbText;
         private System.Windows.Forms.TextBox txtNameDiscount;
-        private System.Windows.Forms.TextBox txtMoneyDiscount;
         private System.Windows.Forms.Label lblTien;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblIdKhuyenMai;
         private System.Windows.Forms.TextBox txtIdDiscount;
         private System.Windows.Forms.Label txtTrangThai;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RadioButton rdbTat;
+        private System.Windows.Forms.RadioButton rdbBat;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtMoneyDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
