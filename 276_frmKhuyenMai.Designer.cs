@@ -31,6 +31,10 @@ namespace Project
         {
             System.Windows.Forms.Button btnDon;
             this.dtgrKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -47,10 +51,6 @@ namespace Project
             this.lblTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNameDiscount = new System.Windows.Forms.TextBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             btnDon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
@@ -80,6 +80,38 @@ namespace Project
             this.dtgrKhuyenMai.Size = new System.Drawing.Size(727, 284);
             this.dtgrKhuyenMai.TabIndex = 0;
             this.dtgrKhuyenMai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrKhuyenMai_CellClick);
+            this.dtgrKhuyenMai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgrKhuyenMai_CellClick);
+            this.dtgrKhuyenMai.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgrKhuyenMai_CellFormatting);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "idDiscount";
+            this.Column1.HeaderText = "Mã Khuyến Mãi";
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Width = 140;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "nameDiscount";
+            this.Column2.HeaderText = "Tên Khuyến Mãi";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 140;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "moneyDiscount";
+            this.Column3.HeaderText = "Tiền Khuyến Mãi ";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 160;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "status";
+            this.Column4.HeaderText = "Trạng Thái";
+            this.Column4.Name = "Column4";
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column4.Width = 160;
             // 
             // label1
             // 
@@ -245,34 +277,6 @@ namespace Project
             this.txtNameDiscount.Name = "txtNameDiscount";
             this.txtNameDiscount.Size = new System.Drawing.Size(173, 20);
             this.txtNameDiscount.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "idDiscount";
-            this.Column1.HeaderText = "Mã Khuyến Mãi";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "nameDiscount";
-            this.Column2.HeaderText = "Tên Khuyến Mãi";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 140;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "moneyDiscount";
-            this.Column3.HeaderText = "Tiền Khuyến Mãi ";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 160;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "status";
-            this.Column4.HeaderText = "Trạng Thái";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 160;
             // 
             // KhuyenMai
             // 

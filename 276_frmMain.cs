@@ -239,5 +239,12 @@ namespace Project
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void sảnPhẩmKhuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSanPhamKhuyenMai frm = new frmSanPhamKhuyenMai();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
