@@ -29,9 +29,10 @@ namespace Project
             txtIdDiscount.ReadOnly = true;
         }
         int status;
+        DataGridViewCellFormattingEventArgs e;
         public void dsKhuyenMai()
         {
-            ds = clsqlbanhang.LoadData("Select * from discount"); 
+            ds = clsqlbanhang.LoadData("Select * from discount");
             dtgrKhuyenMai.DataSource = ds.Tables[0];
             autoIdKhuyenMai();
         }
@@ -40,7 +41,6 @@ namespace Project
             ds.Tables[0].Columns.Add("STT");
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                //ds.Tables[0].Rows[i]["status2"] = (bool)ds.Tables[0].Rows[i]["status"] == true ? "Bat" : "Tat";
                 ds.Tables[0].Rows[i]["STT"] = (i + 1).ToString();
             }
 
@@ -55,8 +55,6 @@ namespace Project
             txtMoneyDiscount.Text = selectedRows.Cells[2].Value.ToString();
             rdbTat.Checked = !bool.Parse(selectedRows.Cells[3].Value.ToString());
             rdbBat.Checked = bool.Parse(selectedRows.Cells[3].Value.ToString());
-
-
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -110,6 +108,19 @@ namespace Project
                 clsqlbanhang.UpdateData(queryKhuyenMai);
                 dsKhuyenMai();
             }
+        }
+        public void dtgrKhuyenMai_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dtgrKhuyenMai.Columns[e.ColumnIndex].Name == "Column4")
+            {
+
+                if (e.Value != null)
+                {
+                    e.Value = bool.Parse(e.Value.ToString()) == true ?  "Bat" : "Tat";
+                    e.FormattingApplied = true;
+                }
+            }
+
         }
     }
 }

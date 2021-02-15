@@ -141,17 +141,17 @@
     <Compile Include="276_frmMain.Designer.cs">
       <DependentUpon>276_frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="201_frmKhuyenMai.cs">
+    <Compile Include="276_frmKhuyenMai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="201_frmKhuyenMai.Designer.cs">
-      <DependentUpon>201_frmKhuyenMai.cs</DependentUpon>
+    <Compile Include="276_frmKhuyenMai.Designer.cs">
+      <DependentUpon>276_frmKhuyenMai.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSanPhamKhuyenMai.cs">
+    <Compile Include="276_frmSanPhamKhuyenMai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSanPhamKhuyenMai.Designer.cs">
-      <DependentUpon>frmSanPhamKhuyenMai.cs</DependentUpon>
+    <Compile Include="276_frmSanPhamKhuyenMai.Designer.cs">
+      <DependentUpon>276_frmSanPhamKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="internetconnection.cs" />
     <Compile Include="Program.cs" />
@@ -165,8 +165,8 @@
     <EmbeddedResource Include="201_frMaMau.resx">
       <DependentUpon>201_frMaMau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="201_frmKhuyenMai.resx">
-      <DependentUpon>201_frmKhuyenMai.cs</DependentUpon>
+    <EmbeddedResource Include="276_frmKhuyenMai.resx">
+      <DependentUpon>276_frmKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="201_frNhanVien.resx">
       <DependentUpon>201_frNhanVien.cs</DependentUpon>
@@ -204,8 +204,8 @@
     <EmbeddedResource Include="276_frmMain.resx">
       <DependentUpon>276_frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSanPhamKhuyenMai.resx">
-      <DependentUpon>frmSanPhamKhuyenMai.cs</DependentUpon>
+    <EmbeddedResource Include="276_frmSanPhamKhuyenMai.resx">
+      <DependentUpon>276_frmSanPhamKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
