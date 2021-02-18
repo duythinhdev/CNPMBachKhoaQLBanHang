@@ -116,7 +116,7 @@ namespace Project
 
                 if (e.Value != null)
                 {
-                    e.Value = bool.Parse(e.Value.ToString()) == true ?  "Bat" : "Tat";
+                    e.Value = bool.Parse(e.Value.ToString()) == true ?  "Bật" : "Tắt";
                     e.FormattingApplied = true;
                 }
             }
