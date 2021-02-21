@@ -14,7 +14,6 @@ namespace Project
     {
         clsqlbanhang clsqlbanhang = new clsqlbanhang();
         DataSet ds = new DataSet();
-        DataTable dt = new DataTable();
         public string sql;
         public frmSanPhamKhuyenMai()
         {
@@ -25,16 +24,13 @@ namespace Project
             dgrSanPham.ReadOnly = true;
             LoadSanPham();
             LoadComboboxKhuyenMai();
+            sanPhamKhuyenMai();
         }
         public void LoadSanPham()
         {
             sql = "select idproduct,name,idcat,image,quantity,price,status from products";
             ds = clsqlbanhang.LoadData(sql);
             dgrSanPham.DataSource = ds.Tables[0];
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-
         }
         public void LoadComboboxKhuyenMai()
         {
@@ -44,15 +40,9 @@ namespace Project
             comboBox1.DisplayMember = "nameDiscount";
             comboBox1.ValueMember = "idDiscount";
         }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-        }
-        public int id;
+        public string id;
         private void btnThem_Click(object sender, EventArgs e)
         {
-
-            //int idSanPham = int.Parse(dgrSanPham.SelectedCells[0].Value.ToString());
             int idKhuyenMai = int.Parse(comboBox1.SelectedValue.ToString());
             sql = "insert into product_discount (id_product,id_discount) values ('" + id
                 + "','" + idKhuyenMai + "')";
@@ -61,13 +51,14 @@ namespace Project
 
         private void dgrSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-             id = row.Cells["idDataGridViewTextBoxColumn"].Value;
+                id = dgrSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
+                MessageBox.Show(dgrSanPham.Rows[e.RowIndex].Cells[0].Value.ToString());
         }
-
-        private void dgrSanPham_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        public void sanPhamKhuyenMai()
         {
-
-
+            sql = "SELECT id_product,id_discount FROM product_discount INNER JOIN products  ON id_product = idproduct";
+            ds =  clsqlbanhang.LoadData(sql);
+            dgrKhuyenMai.DataSource = ds.Tables[0]; 
         }
     }
 }

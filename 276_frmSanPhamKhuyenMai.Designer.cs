@@ -75,7 +75,7 @@ namespace Project
             this.dgrSanPham.Size = new System.Drawing.Size(985, 150);
             this.dgrSanPham.TabIndex = 2;
             this.dgrSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSanPham_CellClick);
-            this.dgrSanPham.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgrSanPham_CellFormatting);
+            //this.dgrSanPham.SelectionChanged += new System.EventHandler(this.dgrSanPham_SelectionChanged);
             // 
             // Column1
             // 
@@ -185,7 +185,6 @@ namespace Project
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnXoa
             // 
