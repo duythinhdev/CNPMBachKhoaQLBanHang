@@ -29,7 +29,7 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbKhuyenMai = new System.Windows.Forms.ComboBox();
             this.dgrSanPham = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,13 +51,14 @@ namespace Project
             this.grbChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbbKhuyenMai
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 81);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 21);
-            this.comboBox1.TabIndex = 0;
+            this.cbbKhuyenMai.FormattingEnabled = true;
+            this.cbbKhuyenMai.Location = new System.Drawing.Point(35, 81);
+            this.cbbKhuyenMai.Name = "cbbKhuyenMai";
+            this.cbbKhuyenMai.Size = new System.Drawing.Size(215, 21);
+            this.cbbKhuyenMai.TabIndex = 0;
+            this.cbbKhuyenMai.SelectedIndexChanged += new System.EventHandler(this.cbbKhuyenMai_SelectedIndexChanged);
             // 
             // dgrSanPham
             // 
@@ -75,7 +76,6 @@ namespace Project
             this.dgrSanPham.Size = new System.Drawing.Size(985, 150);
             this.dgrSanPham.TabIndex = 2;
             this.dgrSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrSanPham_CellClick);
-            //this.dgrSanPham.SelectionChanged += new System.EventHandler(this.dgrSanPham_SelectionChanged);
             // 
             // Column1
             // 
@@ -214,7 +214,7 @@ namespace Project
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgrKhuyenMai);
             this.Controls.Add(this.dgrSanPham);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbKhuyenMai);
             this.Name = "frmSanPhamKhuyenMai";
             this.Text = "frmSanPhamKhuyenMai";
             this.Load += new System.EventHandler(this.frmSanPhamKhuyenMai_Load);
@@ -227,7 +227,7 @@ namespace Project
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbKhuyenMai;
         private System.Windows.Forms.DataGridView dgrSanPham;
         private System.Windows.Forms.DataGridView dgrKhuyenMai;
         private System.Windows.Forms.Label label1;
