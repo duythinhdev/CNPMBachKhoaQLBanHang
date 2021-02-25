@@ -17,6 +17,7 @@ namespace Project
         public string sql;
         public string id;
         public int idKhuyenMai;
+        public int flagSave;
         public frmSanPhamKhuyenMai()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Project
         }
         public void LoadComboboxKhuyenMai()
         {
-            sql = "select *  from discount";
+            sql = "select *  from discount where status = 1";
             ds = clsqlbanhang.LoadData(sql);
             cbbKhuyenMai.DataSource = ds.Tables[0];
             cbbKhuyenMai.DisplayMember = "nameDiscount";
@@ -44,22 +45,18 @@ namespace Project
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            idKhuyenMai = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
-            sql = "insert into product_discount (idProduct,idDiscount) values ('" + id
-                + "','" + idKhuyenMai + "')";
-            clsqlbanhang.UpdateData(sql);
-            sanPhamKhuyenMai();
-
+            flagSave = 1;
         }
 
         private void dgrSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                id = dgrSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
-                MessageBox.Show(dgrSanPham.Rows[e.RowIndex].Cells[0].Value.ToString());
+                int idProduct = e.RowIndex;
+                id = dgrSanPham.Rows[idProduct].Cells[0].Value.ToString();
+                MessageBox.Show(dgrSanPham.Rows[idProduct].Cells[0].Value.ToString());
         }
         public void sanPhamKhuyenMai()
         {
-            sql = "SELECT products.idproduct, products.name,products.price FROM products LEFT JOIN product_discount ON products.idproduct = product_discount.idProduct";
+            sql = "SELECT DISTINCT products.idproduct, products.name,products.price FROM products LEFT JOIN product_discount ON products.idproduct = product_discount.idProduct ";
             ds = clsqlbanhang.LoadData(sql);
             dgrKhuyenMai.DataSource = ds.Tables[0];
         }
@@ -67,13 +64,26 @@ namespace Project
         private void cbbKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
         {
             string cbbKhuyenMaiLoad = cbbKhuyenMai.Text;
-            sql = "select products.idproduct, products.name,products.price FROM discount,product_discount,products  where nameDiscount=N'" + cbbKhuyenMaiLoad+ "' and discount.idDiscount = product_discount.idDiscount and products.idproduct = product_discount.idProduct";
+            sql = "select DISTINCT products.idproduct, products.name,products.price FROM discount,product_discount,products  where nameDiscount=N'" + cbbKhuyenMaiLoad+ "' and discount.idDiscount = product_discount.idDiscount and products.idproduct = product_discount.idProduct ";
             showValueFollowCbbKhuyenMai(sql);
         }
         public void showValueFollowCbbKhuyenMai(string sql)
         {
             ds = clsqlbanhang.LoadData(sql);
             dgrKhuyenMai.DataSource = ds.Tables[0];
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+            if(flagSave == 1)
+            {
+                idKhuyenMai = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
+                sql = "insert into product_discount (idProduct,idDiscount) values ('" + id
+                    + "','" + idKhuyenMai + "')";
+                clsqlbanhang.UpdateData(sql);
+                sanPhamKhuyenMai();
+            }    
         }
     }
 }
