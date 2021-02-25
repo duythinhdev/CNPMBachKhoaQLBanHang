@@ -42,10 +42,11 @@ namespace Project
             this.label1 = new System.Windows.Forms.Label();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
@@ -129,6 +130,10 @@ namespace Project
             // dgrKhuyenMai
             // 
             this.dgrKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrKhuyenMai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column8,
+            this.Column9,
+            this.Column10});
             this.dgrKhuyenMai.Location = new System.Drawing.Point(275, 81);
             this.dgrKhuyenMai.Name = "dgrKhuyenMai";
             this.dgrKhuyenMai.Size = new System.Drawing.Size(467, 191);
@@ -148,8 +153,6 @@ namespace Project
             // grbChucNang
             // 
             this.grbChucNang.Controls.Add(this.btnLuu);
-            this.grbChucNang.Controls.Add(this.btnClear);
-            this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThem);
             this.grbChucNang.Location = new System.Drawing.Point(768, 81);
@@ -161,36 +164,19 @@ namespace Project
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(83, 135);
+            this.btnLuu.Location = new System.Drawing.Point(84, 102);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 26);
+            this.btnLuu.Size = new System.Drawing.Size(75, 45);
             this.btnLuu.TabIndex = 4;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(132, 86);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 32);
-            this.btnClear.TabIndex = 3;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(22, 86);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 32);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(132, 39);
+            this.btnXoa.Location = new System.Drawing.Point(144, 39);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 31);
+            this.btnXoa.Size = new System.Drawing.Size(75, 44);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -199,11 +185,29 @@ namespace Project
             // 
             this.btnThem.Location = new System.Drawing.Point(22, 39);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 31);
+            this.btnThem.Size = new System.Drawing.Size(75, 44);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "idproduct";
+            this.Column8.HeaderText = "Mã Sản Phẩm ";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "name";
+            this.Column9.HeaderText = "Tên Sản Phẩm ";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "price";
+            this.Column10.HeaderText = "Giá Sản Phẩm ";
+            this.Column10.Name = "Column10";
             // 
             // frmSanPhamKhuyenMai
             // 
@@ -239,10 +243,11 @@ namespace Project
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.GroupBox grbChucNang;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }
