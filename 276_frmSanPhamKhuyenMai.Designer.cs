@@ -39,14 +39,14 @@ namespace Project
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgrKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
@@ -139,6 +139,25 @@ namespace Project
             this.dgrKhuyenMai.Size = new System.Drawing.Size(467, 191);
             this.dgrKhuyenMai.TabIndex = 3;
             // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "idproduct";
+            this.Column8.HeaderText = "Mã Sản Phẩm ";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "name";
+            this.Column9.HeaderText = "Tên Sản Phẩm ";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 230;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "price";
+            this.Column10.HeaderText = "Giá Sản Phẩm ";
+            this.Column10.Name = "Column10";
+            // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Aqua;
@@ -180,6 +199,7 @@ namespace Project
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -190,24 +210,6 @@ namespace Project
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "idproduct";
-            this.Column8.HeaderText = "Mã Sản Phẩm ";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "name";
-            this.Column9.HeaderText = "Tên Sản Phẩm ";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "price";
-            this.Column10.HeaderText = "Giá Sản Phẩm ";
-            this.Column10.Name = "Column10";
             // 
             // frmSanPhamKhuyenMai
             // 

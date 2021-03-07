@@ -31,7 +31,7 @@ namespace Project
                 + ";port=" + port + ";User Id=" + username + ";password=" + password;
 
             MySqlConnection conn = new MySqlConnection(connString);
-            if(conn.State==ConnectionState.Closed)
+            if(conn.State == ConnectionState.Closed)
                 conn.Open();
             return conn;
 
@@ -45,6 +45,7 @@ namespace Project
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
+            
             return ds;
         }
             

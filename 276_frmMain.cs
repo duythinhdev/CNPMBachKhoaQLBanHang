@@ -33,11 +33,7 @@ namespace Project
                 toolDMSP.Enabled = false;
                 danhSáchSảnPhẩmToolStripMenuItem.Enabled = false;
                 toolSearchSPwName.Enabled = false;
-
-
             }
-                
-           
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -155,6 +151,7 @@ namespace Project
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            
             if (internetconnection.IsConnectedToInternet() == false)
             {
                 DialogResult dlgHoiThoat = new DialogResult();
@@ -245,6 +242,11 @@ namespace Project
             frmSanPhamKhuyenMai frm = new frmSanPhamKhuyenMai();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void hóaĐơnKhuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

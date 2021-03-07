@@ -108,6 +108,14 @@ namespace Project
                 clsqlbanhang.UpdateData(queryKhuyenMai);
                 dsKhuyenMai();
             }
+            clearData();
+
+        }
+        public void clearData()
+        {
+            txtIdDiscount.Clear();
+            txtNameDiscount.Clear();
+            txtMoneyDiscount.Clear();
         }
         public void dtgrKhuyenMai_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
