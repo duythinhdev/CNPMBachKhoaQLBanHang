@@ -30,6 +30,7 @@ namespace Project
             DataSet ds = new DataSet();
             string sql = "Select count(idemployee),permission,name from employees where idemployee = '" + txtMaNV.Text + "'";
             ds = c.LoadData(sql);
+            
             int value = int.Parse(ds.Tables[0].Rows[0][0].ToString());
             if (value == 1)
             {

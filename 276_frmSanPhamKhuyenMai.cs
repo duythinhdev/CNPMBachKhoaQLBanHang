@@ -15,8 +15,8 @@ namespace Project
         clsqlbanhang clsqlbanhang = new clsqlbanhang();
         DataSet ds = new DataSet();
         public string sql;
-        public string id;
-        public int idKhuyenMai;
+        public string idProducts;
+        public int idDiscount;
         public int flagSave;
         public frmSanPhamKhuyenMai()
         {
@@ -25,17 +25,17 @@ namespace Project
         private void frmSanPhamKhuyenMai_Load(object sender, EventArgs e)
         {
             dgrSanPham.ReadOnly = true;
-            LoadSanPham();
-            LoadComboboxKhuyenMai();
-            sanPhamKhuyenMai();
+            dgrKhuyenMai.ReadOnly = true;
+            LoadProducts();
+            LoadComboboxDiscount();
         }
-        public void LoadSanPham()
+        public void LoadProducts()
         {
             sql = "select idproduct,name,idcat,image,quantity,price,status from products";
             ds = clsqlbanhang.LoadData(sql);
             dgrSanPham.DataSource = ds.Tables[0];
         }
-        public void LoadComboboxKhuyenMai()
+        public void LoadComboboxDiscount()
         {
             sql = "select *  from discount where status = 1";
             ds = clsqlbanhang.LoadData(sql);
@@ -50,9 +50,10 @@ namespace Project
 
         private void dgrSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                int idProduct = e.RowIndex;
-                id = dgrSanPham.Rows[idProduct].Cells[0].Value.ToString();
-                MessageBox.Show(dgrSanPham.Rows[idProduct].Cells[0].Value.ToString());
+            int idProduct = e.RowIndex;
+            idProducts = dgrSanPham.Rows[idProduct].Cells[0].Value.ToString();
+            MessageBox.Show(idProducts);
+
         }
         public void sanPhamKhuyenMai()
         {
@@ -75,15 +76,38 @@ namespace Project
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
-            if(flagSave == 1)
+            sql = "SELECT  * FROM  product_discount WHERE  idProduct = '" + idProducts+ "' and idDiscount ='"+idDiscount+"'";
+            ds = clsqlbanhang.LoadData(sql);
+            int checkValue = ds.Tables[0].Rows.Count;
+            if (checkValue == 0)
             {
-                idKhuyenMai = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
-                sql = "insert into product_discount (idProduct,idDiscount) values ('" + id
-                    + "','" + idKhuyenMai + "')";
-                clsqlbanhang.UpdateData(sql);
-                sanPhamKhuyenMai();
-            }    
+                if (flagSave == 1)
+                {
+                    {
+                        idDiscount = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
+                        sql = "insert into product_discount (idProduct,idDiscount) values ('" + idProducts + "','" + idDiscount + "')";
+                        clsqlbanhang.UpdateData(sql);
+                        sanPhamKhuyenMai();
+                    }
+                }
+                else if(flagSave == 2)
+                {
+                        idDiscount = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
+                        sql = "DELETE from product_discount WHERE idProduct = '"+ idProducts + "' and idDiscount = '"+idDiscount
+                            +"' ";
+                        clsqlbanhang.UpdateData(sql);
+                        sanPhamKhuyenMai();
+                }                    
+            }
+            else
+            {
+                MessageBox.Show("idproduct " + idProducts + " Record Already in database");
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            flagSave = 2;
         }
     }
 }

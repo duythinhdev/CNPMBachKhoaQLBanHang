@@ -23,9 +23,11 @@ namespace Project
         DataSet dssp = new DataSet();
         DataSet dshd = new DataSet();
         DataSet dskh = new DataSet();
+        DataSet dstensp = new DataSet();
         string idcusctomer = "";
         int status = 0;
         float hd_total = 0;
+        public string sql;
 
         string CreateID()
         {
@@ -46,7 +48,7 @@ namespace Project
         {
             txtKhuyenMai.ReadOnly = t;
             txtSL.ReadOnly = t;
-            txtTenSP.ReadOnly = t;
+            /*cbbTenSp.ReadOnly = t;*/
             txtMaSP.ReadOnly = t;
             txtPhoneKH.ReadOnly = t;
             txtGiaBan.ReadOnly = t;
@@ -54,6 +56,7 @@ namespace Project
             cbbTenNV.Enabled = !t;
             cbbTrangThai.Enabled = !t;
             dtpNgayLap.Enabled = !t;
+            txtTenKhuyenMai.ReadOnly = t;
         }
         void status_button(Boolean t)
         {
@@ -110,7 +113,7 @@ namespace Project
             {
                 if(idbill != "")
                 {
-                    string sql = "INSERT INTO bill(idbill,idcustomer,idemployee,date_founded,total,status) VALUES ('" + idbill + "','" + idcustomers + "','" + idemployee + "','" + date + "','" + total + "','" + statuss + "')";
+                    sql = "INSERT INTO bill(idbill,idcustomer,idemployee,date_founded,total,status) VALUES ('" + idbill + "','" + idcustomers + "','" + idemployee + "','" + date + "','" + total + "','" + statuss + "')";
                     UpdateDataTable(sql);
                 }
             }
@@ -124,7 +127,7 @@ namespace Project
                 string detail_total = dgvCTHD.Rows[i].Cells[4].Value.ToString();
                 if(idbill != "")
                 {
-                    string sql = "INSERT INTO bill_detail(idbill,idproduct,price,quantity,discount,total) VALUES('" + idbill + "','" + idproduct + "','" + price + "','" + quantity + "','" + discount + "','" + detail_total + "')";
+                    sql = "INSERT INTO bill_detail(idbill,idproduct,price,quantity,discount,total) VALUES('" + idbill + "','" + idproduct + "','" + price + "','" + quantity + "','" + discount + "','" + detail_total + "')";
                     c.UpdateData(sql);
                 }
 
@@ -136,7 +139,7 @@ namespace Project
             txtKhuyenMai.Clear();
             txtGiaBan.Clear();
             txtMaSP.Clear();
-            txtTenSP.Clear();
+           /* cbbTenSp.Clear();*/
             txtPhoneKH.Clear();
             txtTenKH.Clear();
             cbbTenNV.Text = "";
@@ -169,6 +172,7 @@ namespace Project
             status_button(true);
             LoadTableEmployees();
             txtMaSP.Focus();
+            loadCbbTenSanPham();
         }
 
         DataSet SearchKH(string phone)
@@ -203,7 +207,7 @@ namespace Project
                     {
                         string path = @"D:\LearnC#\Project\bin\Image";
                         dssp = c.LoadData("Select name,price,image from products where idproduct = '" + txtMaSP.Text + "'");
-                        txtTenSP.Text = dssp.Tables[0].Rows[0]["name"].ToString();
+                        cbbTenSp.Text = dssp.Tables[0].Rows[0]["name"].ToString();
                         txtGiaBan.Text = dssp.Tables[0].Rows[0]["price"].ToString();
                         string img = dssp.Tables[0].Rows[0]["image"].ToString();
                         string[] arrlistimg = img.Split(new char[] { ';' }).ToArray();
@@ -336,5 +340,41 @@ namespace Project
         {
 
         }
+        public void loadCbbTenSanPham()
+        {
+            sql = "select * from products";
+            dstensp = c.LoadData(sql);
+            cbbTenSp.DisplayMember = "name";
+            cbbTenSp.ValueMember = "idproduct";
+            cbbTenSp.DataSource = dstensp.Tables[0];
+
+        }
+
+        private void cbbTenSp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cbbTenSpLoad = cbbTenSp.Text;
+            sql = "SELECT discount.moneyDiscount,products.idproduct,discount.nameDiscount,products.price from product_discount,discount,products where products.name=N'" + cbbTenSpLoad + "'  and discount.idDiscount = product_discount.idDiscount and  product_discount.idProduct = products.idproduct";
+            showValuePriceDiscount(sql);   
+        }
+        public void showValuePriceDiscount(string sql)
+        {
+            int sum = 0;
+            string tenKhuyenMai= "";
+            int soLuong = 1;
+            dstensp = c.LoadData(sql);
+            DataTable dataTable = dstensp.Tables[0];
+            foreach (DataRow row in dataTable.Rows)
+            {
+                    sum += int.Parse(row["moneyDiscount"].ToString());
+                    tenKhuyenMai += row["nameDiscount"] + ", ";
+            }
+            txtKhuyenMai.Text = sum.ToString();
+            txtMaSP.Text = dstensp.Tables[0].Rows[0]["idproduct"].ToString();
+            txtGiaBan.Text = dstensp.Tables[0].Rows[0]["price"].ToString();
+            txtTenKhuyenMai.Text = tenKhuyenMai;
+            soLuong *= sum;
+            txtSL.Text = soLuong.ToString(); 
+        }
     }
 }
+
