@@ -60,6 +60,8 @@ namespace Project
                 dgvCTHD.DataSource = dscthd.Tables[0];
                 dtpNgayLap.Text = ds.Tables[0].Rows[vt]["date_founded"].ToString();
                 txtThanhTien.Text = ds.Tables[0].Rows[vt]["total"].ToString();
+                
+                
                 txtTenKH.Text = dskh.Tables[0].Rows[0]["name"].ToString();
                 cbbTrangThai.Text = ds.Tables[0].Rows[vt]["status"].ToString();
                 txtPhoneKH.Text = "0" + dskh.Tables[0].Rows[0]["phone"].ToString();

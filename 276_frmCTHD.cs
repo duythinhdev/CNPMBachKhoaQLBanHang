@@ -23,7 +23,7 @@ namespace Project
         DataSet dssp = new DataSet();
         DataSet dshd = new DataSet();
         DataSet dskh = new DataSet();
-        DataSet dstensp = new DataSet();
+        DataSet listDetailProduct = new DataSet();
         string idcusctomer = "";
         int status = 0;
         float hd_total = 0;
@@ -70,6 +70,7 @@ namespace Project
         {
             status_textbox(false);
             status_button(false);
+            txtMaSP.ReadOnly = true;
             status = 1;
             txtMaHĐ.Text = CreateID();
             txtMaHĐ.Focus();
@@ -171,8 +172,8 @@ namespace Project
             status_textbox(true);
             status_button(true);
             LoadTableEmployees();
-            txtMaSP.Focus();
-            loadCbbTenSanPham();
+            loadCbbNameProduct();
+
         }
 
         DataSet SearchKH(string phone)
@@ -335,46 +336,67 @@ namespace Project
                 e.Handled = true;
             }
         }
-
-        private void dgvCTHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        public void loadCbbTenSanPham()
+        public void loadCbbNameProduct()
         {
             sql = "select * from products";
-            dstensp = c.LoadData(sql);
+            listDetailProduct = c.LoadData(sql);
             cbbTenSp.DisplayMember = "name";
             cbbTenSp.ValueMember = "idproduct";
-            cbbTenSp.DataSource = dstensp.Tables[0];
-
+            cbbTenSp.DataSource = listDetailProduct.Tables[0];
         }
 
         private void cbbTenSp_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string cbbTenSpLoad = cbbTenSp.Text;
-            sql = "SELECT discount.moneyDiscount,products.idproduct,discount.nameDiscount,products.price from product_discount,discount,products where products.name=N'" + cbbTenSpLoad + "'  and discount.idDiscount = product_discount.idDiscount and  product_discount.idProduct = products.idproduct";
-            showValuePriceDiscount(sql);   
+            string cbbNameProductLoad = cbbTenSp.Text;
+            sql = "SELECT discount.moneyDiscount,products.idproduct,discount.nameDiscount,products.price " +
+                "from product_discount,discount,products where products.name=N'" + cbbNameProductLoad + "'  " +
+                "and discount.idDiscount = product_discount.idDiscount and  product_discount.idProduct = products.idproduct";
+            getValueDetailBill(sql);   
         }
-        public void showValuePriceDiscount(string sql)
+        public void getValueDetailBill(string sql)
         {
-            int sum = 0;
-            string tenKhuyenMai= "";
-            int soLuong = 1;
-            dstensp = c.LoadData(sql);
-            DataTable dataTable = dstensp.Tables[0];
+            int amout = 1;
+            string nameDiscount= "";
+            int sumMoneyDiscount = 0;
+            listDetailProduct = c.LoadData(sql);
+            fetchValuedetailBill(sumMoneyDiscount,nameDiscount, amout, listDetailProduct);
+        }
+        public int valueAmount;
+        private int resultMultiplyPriceDiscount;
+        private int resultMultiplyPriceProduct;
+        public void fetchValuedetailBill(int sumMoneyDiscount,string nameDiscount, int amout, DataSet listNameProduct)
+        {
+            txtSL.Text = amout.ToString();
+            DataTable dataTable = listNameProduct.Tables[0];
             foreach (DataRow row in dataTable.Rows)
             {
-                    sum += int.Parse(row["moneyDiscount"].ToString());
-                    tenKhuyenMai += row["nameDiscount"] + ", ";
+                sumMoneyDiscount += int.Parse(row["moneyDiscount"].ToString());
+                nameDiscount += row["nameDiscount"] + ", ";
             }
-            txtKhuyenMai.Text = sum.ToString();
-            txtMaSP.Text = dstensp.Tables[0].Rows[0]["idproduct"].ToString();
-            txtGiaBan.Text = dstensp.Tables[0].Rows[0]["price"].ToString();
-            txtTenKhuyenMai.Text = tenKhuyenMai;
-            soLuong *= sum;
-            txtSL.Text = soLuong.ToString(); 
+            assignValueDetailBill(sumMoneyDiscount, dataTable, nameDiscount);
+        }
+        public void assignValueDetailBill(int sumMoneyDiscount, DataTable dataTable, string nameDiscount)
+        {
+            txtKhuyenMai.Text = sumMoneyDiscount.ToString();
+            txtMaSP.Text = dataTable.Rows[0]["idproduct"].ToString();
+            txtGiaBan.Text = dataTable.Rows[0]["price"].ToString();
+            txtTenKhuyenMai.Text = nameDiscount;
+        } 
+        private void txtSL_KeyUp(object sender, KeyEventArgs e)
+        {
+            DataTable dataTable = listDetailProduct.Tables[0];
+            int moneyDiscount = 0;
+            foreach (DataRow row in dataTable.Rows)
+            {
+                moneyDiscount += int.Parse(row["moneyDiscount"].ToString());
+            }
+            valueAmount = txtSL.Text != "" ?  int.Parse(txtSL.Text): 1;
+            resultMultiplyPriceDiscount = valueAmount * moneyDiscount;
+            resultMultiplyPriceProduct = valueAmount * int.Parse(listDetailProduct.Tables[0].Rows[0]["price"].ToString());
+            txtKhuyenMai.Text = resultMultiplyPriceDiscount.ToString();
+            txtGiaBan.Text = resultMultiplyPriceProduct.ToString();
         }
     }
 }
+
 
