@@ -59,23 +59,27 @@ namespace Project
         private void btnThem_Click(object sender, EventArgs e)
         {
             flagSave = 1;
+            status_button(false);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             flagSave = 2;
+            status_button(false);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             flagSave = 3;
+            status_button(false);
         }
 
-        private void btnDon_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             txtIdDiscount.Text = "";
             txtNameDiscount.Text = "";
             txtMoneyDiscount.Text = "";
+            status_button(false);
 
         }
         private void rdbBat_CheckedChanged(object sender, EventArgs e)
@@ -90,6 +94,7 @@ namespace Project
         string queryKhuyenMai;
         private void btnSave_Click(object sender, EventArgs e)
         {
+            status_button(true);
             if (flagSave == 1)
             {
                 queryKhuyenMai = "insert into discount (nameDiscount,moneyDiscount,status) values ('" + txtNameDiscount.Text + "','" + txtMoneyDiscount.Text + "','" + status + "')";
@@ -129,6 +134,13 @@ namespace Project
                 }
             }
 
+        }
+        public void status_button(Boolean t)
+        {
+            btnThem.Enabled = t;
+            btnSua.Enabled = t;
+            btnXoa.Enabled = t;
+            btnSave.Enabled =  !t;
         }
     }
 }

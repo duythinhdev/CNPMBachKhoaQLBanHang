@@ -29,7 +29,7 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnDon;
+            System.Windows.Forms.Button btnClear;
             this.dtgrKhuyenMai = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,21 +51,21 @@ namespace Project
             this.lblTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNameDiscount = new System.Windows.Forms.TextBox();
-            btnDon = new System.Windows.Forms.Button();
+            btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
             this.grbText.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnDon
+            // btnClear
             // 
-            btnDon.Location = new System.Drawing.Point(148, 99);
-            btnDon.Name = "btnDon";
-            btnDon.Size = new System.Drawing.Size(75, 38);
-            btnDon.TabIndex = 3;
-            btnDon.Text = "Dọn";
-            btnDon.UseVisualStyleBackColor = true;
-            btnDon.Click += new System.EventHandler(this.btnDon_Click);
+            btnClear.Location = new System.Drawing.Point(148, 99);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new System.Drawing.Size(75, 38);
+            btnClear.TabIndex = 3;
+            btnClear.Text = "Dọn";
+            btnClear.UseVisualStyleBackColor = true;
+            //btnClear.Click += new System.EventHandler(this.btnDon_Click);
             // 
             // dtgrKhuyenMai
             // 
@@ -127,7 +127,7 @@ namespace Project
             // grbChucNang
             // 
             this.grbChucNang.Controls.Add(this.btnSave);
-            this.grbChucNang.Controls.Add(btnDon);
+            this.grbChucNang.Controls.Add(btnClear);
             this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThem);

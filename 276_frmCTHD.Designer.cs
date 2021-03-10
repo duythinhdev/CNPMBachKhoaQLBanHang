@@ -42,6 +42,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtTenKhuyenMai = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.cbbTenSp = new System.Windows.Forms.ComboBox();
             this.btnFrmHD = new System.Windows.Forms.Button();
             this.btnSearchKH = new System.Windows.Forms.Button();
@@ -72,8 +74,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtTenKhuyenMai = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -127,7 +127,9 @@
             this.txtKhuyenMai.Name = "txtKhuyenMai";
             this.txtKhuyenMai.Size = new System.Drawing.Size(250, 29);
             this.txtKhuyenMai.TabIndex = 5;
+            //this.txtKhuyenMai.TextChanged += new System.EventHandler(this.txtKhuyenMai_TextChanged);
             this.txtKhuyenMai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtKhuyenMai_KeyPress);
+            //this.txtKhuyenMai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKhuyenMai_KeyUp);
             // 
             // txtSL
             // 
@@ -137,6 +139,7 @@
             this.txtSL.Size = new System.Drawing.Size(250, 29);
             this.txtSL.TabIndex = 4;
             this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSL_KeyPress);
+            this.txtSL.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSL_KeyUp);
             // 
             // label6
             // 
@@ -252,6 +255,24 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin sản phẩm";
+            // 
+            // txtTenKhuyenMai
+            // 
+            this.txtTenKhuyenMai.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKhuyenMai.Location = new System.Drawing.Point(195, 233);
+            this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
+            this.txtTenKhuyenMai.Size = new System.Drawing.Size(250, 29);
+            this.txtTenKhuyenMai.TabIndex = 26;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(36, 244);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(138, 18);
+            this.label14.TabIndex = 25;
+            this.label14.Text = "TÊN KHUYẾN MÃI";
             // 
             // cbbTenSp
             // 
@@ -520,7 +541,7 @@
             this.dgvCTHD.RowTemplate.Height = 24;
             this.dgvCTHD.Size = new System.Drawing.Size(574, 444);
             this.dgvCTHD.TabIndex = 0;
-            this.dgvCTHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellContentClick);
+            //this.dgvCTHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellContentClick);
             // 
             // Column1
             // 
@@ -556,24 +577,6 @@
             this.Column5.HeaderText = "Thành Tiền";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(36, 244);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(138, 18);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "TÊN KHUYẾN MÃI";
-            // 
-            // txtTenKhuyenMai
-            // 
-            this.txtTenKhuyenMai.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKhuyenMai.Location = new System.Drawing.Point(195, 233);
-            this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
-            this.txtTenKhuyenMai.Size = new System.Drawing.Size(250, 29);
-            this.txtTenKhuyenMai.TabIndex = 26;
             // 
             // frmCTHD
             // 
