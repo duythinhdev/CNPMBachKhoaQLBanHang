@@ -33,6 +33,10 @@ namespace Project
                 toolDMSP.Enabled = false;
                 danhSáchSảnPhẩmToolStripMenuItem.Enabled = false;
                 toolSearchSPwName.Enabled = false;
+                khuyếnMãiToolStripMenuItem1.Enabled = false;
+                sảnPhẩmKhuyếnMãiToolStripMenuItem.Enabled = false;
+                khuyếnMãiToolStripMenuItem.Enabled = false;
+
             }
         }
 

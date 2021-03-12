@@ -74,7 +74,6 @@
             this.khuyếnMãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.khuyếnMãiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sảnPhẩmKhuyếnMãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hóaĐơnKhuyếnMãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -473,8 +472,7 @@
             // 
             this.khuyếnMãiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.khuyếnMãiToolStripMenuItem1,
-            this.sảnPhẩmKhuyếnMãiToolStripMenuItem,
-            this.hóaĐơnKhuyếnMãiToolStripMenuItem});
+            this.sảnPhẩmKhuyếnMãiToolStripMenuItem});
             this.khuyếnMãiToolStripMenuItem.Name = "khuyếnMãiToolStripMenuItem";
             this.khuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
             this.khuyếnMãiToolStripMenuItem.Text = "Khuyến Mãi";
@@ -492,13 +490,6 @@
             this.sảnPhẩmKhuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.sảnPhẩmKhuyếnMãiToolStripMenuItem.Text = "Sản Phẩm Khuyến Mãi";
             this.sảnPhẩmKhuyếnMãiToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmKhuyếnMãiToolStripMenuItem_Click);
-            // 
-            // hóaĐơnKhuyếnMãiToolStripMenuItem
-            // 
-            this.hóaĐơnKhuyếnMãiToolStripMenuItem.Name = "hóaĐơnKhuyếnMãiToolStripMenuItem";
-            this.hóaĐơnKhuyếnMãiToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.hóaĐơnKhuyếnMãiToolStripMenuItem.Text = "Hóa Đơn Khuyến Mãi";
-            this.hóaĐơnKhuyếnMãiToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnKhuyếnMãiToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -799,7 +790,6 @@
         private System.Windows.Forms.ToolStripMenuItem khuyếnMãiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem khuyếnMãiToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sảnPhẩmKhuyếnMãiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hóaĐơnKhuyếnMãiToolStripMenuItem;
     }
 }
 

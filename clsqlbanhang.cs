@@ -54,7 +54,6 @@ namespace Project
             MySqlCommand cmd = GetDBConnection().CreateCommand();
             cmd.CommandText = sql;
             cmd.CommandType = CommandType.Text;
-
             return cmd.ExecuteNonQuery();
         }
 

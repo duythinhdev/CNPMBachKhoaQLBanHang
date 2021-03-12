@@ -29,7 +29,6 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnClear;
             this.dtgrKhuyenMai = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +36,7 @@ namespace Project
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -51,21 +51,11 @@ namespace Project
             this.lblTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNameDiscount = new System.Windows.Forms.TextBox();
-            btnClear = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
             this.grbText.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnClear
-            // 
-            btnClear.Location = new System.Drawing.Point(148, 99);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new System.Drawing.Size(75, 38);
-            btnClear.TabIndex = 3;
-            btnClear.Text = "Dọn";
-            btnClear.UseVisualStyleBackColor = true;
-            //btnClear.Click += new System.EventHandler(this.btnDon_Click);
             // 
             // dtgrKhuyenMai
             // 
@@ -126,8 +116,9 @@ namespace Project
             // 
             // grbChucNang
             // 
+            this.grbChucNang.Controls.Add(this.btnHuy);
+            this.grbChucNang.Controls.Add(this.btnClear);
             this.grbChucNang.Controls.Add(this.btnSave);
-            this.grbChucNang.Controls.Add(btnClear);
             this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThem);
@@ -138,11 +129,22 @@ namespace Project
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức Năng";
             // 
+            // btnClear
+            // 
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnClear.Location = new System.Drawing.Point(148, 83);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(87, 40);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Dọn";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(91, 154);
+            this.btnSave.Location = new System.Drawing.Point(27, 143);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 40);
+            this.btnSave.Size = new System.Drawing.Size(81, 40);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -150,7 +152,7 @@ namespace Project
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(27, 99);
+            this.btnSua.Location = new System.Drawing.Point(27, 85);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(81, 38);
             this.btnSua.TabIndex = 2;
@@ -161,9 +163,9 @@ namespace Project
             // btnXoa
             // 
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnXoa.Location = new System.Drawing.Point(148, 38);
+            this.btnXoa.Location = new System.Drawing.Point(148, 19);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 40);
+            this.btnXoa.Size = new System.Drawing.Size(87, 40);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -171,7 +173,7 @@ namespace Project
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(27, 38);
+            this.btnThem.Location = new System.Drawing.Point(27, 19);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(81, 40);
             this.btnThem.TabIndex = 0;
@@ -192,14 +194,14 @@ namespace Project
             this.grbText.Controls.Add(this.txtNameDiscount);
             this.grbText.Location = new System.Drawing.Point(31, 90);
             this.grbText.Name = "grbText";
-            this.grbText.Size = new System.Drawing.Size(418, 213);
+            this.grbText.Size = new System.Drawing.Size(441, 213);
             this.grbText.TabIndex = 3;
             this.grbText.TabStop = false;
             // 
             // rdbTat
             // 
             this.rdbTat.AutoSize = true;
-            this.rdbTat.Location = new System.Drawing.Point(222, 143);
+            this.rdbTat.Location = new System.Drawing.Point(238, 143);
             this.rdbTat.Name = "rdbTat";
             this.rdbTat.Size = new System.Drawing.Size(41, 17);
             this.rdbTat.TabIndex = 10;
@@ -211,7 +213,7 @@ namespace Project
             // rdbBat
             // 
             this.rdbBat.AutoSize = true;
-            this.rdbBat.Location = new System.Drawing.Point(131, 143);
+            this.rdbBat.Location = new System.Drawing.Point(143, 143);
             this.rdbBat.Name = "rdbBat";
             this.rdbBat.Size = new System.Drawing.Size(41, 17);
             this.rdbBat.TabIndex = 9;
@@ -278,17 +280,28 @@ namespace Project
             this.txtNameDiscount.Size = new System.Drawing.Size(173, 20);
             this.txtNameDiscount.TabIndex = 0;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnHuy.Location = new System.Drawing.Point(148, 143);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(87, 40);
+            this.btnHuy.TabIndex = 6;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            // 
             // KhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 648);
+            this.ClientSize = new System.Drawing.Size(778, 648);
             this.Controls.Add(this.grbText);
             this.Controls.Add(this.grbChucNang);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgrKhuyenMai);
             this.Name = "KhuyenMai";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.KhuyenMai_FormClosing);
             this.Load += new System.EventHandler(this.KhuyenMai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgrKhuyenMai)).EndInit();
             this.grbChucNang.ResumeLayout(false);
@@ -321,5 +334,7 @@ namespace Project
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnHuy;
     }
 }
