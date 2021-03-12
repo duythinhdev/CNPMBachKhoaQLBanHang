@@ -138,6 +138,7 @@ namespace Project
             this.dgrKhuyenMai.Name = "dgrKhuyenMai";
             this.dgrKhuyenMai.Size = new System.Drawing.Size(467, 191);
             this.dgrKhuyenMai.TabIndex = 3;
+            this.dgrKhuyenMai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrKhuyenMai_CellClick);
             // 
             // Column8
             // 
@@ -223,6 +224,7 @@ namespace Project
             this.Controls.Add(this.cbbKhuyenMai);
             this.Name = "frmSanPhamKhuyenMai";
             this.Text = "frmSanPhamKhuyenMai";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSanPhamKhuyenMai_FormClosing);
             this.Load += new System.EventHandler(this.frmSanPhamKhuyenMai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgrSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKhuyenMai)).EndInit();

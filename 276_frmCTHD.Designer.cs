@@ -127,9 +127,7 @@
             this.txtKhuyenMai.Name = "txtKhuyenMai";
             this.txtKhuyenMai.Size = new System.Drawing.Size(250, 29);
             this.txtKhuyenMai.TabIndex = 5;
-            //this.txtKhuyenMai.TextChanged += new System.EventHandler(this.txtKhuyenMai_TextChanged);
             this.txtKhuyenMai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtKhuyenMai_KeyPress);
-            //this.txtKhuyenMai.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKhuyenMai_KeyUp);
             // 
             // txtSL
             // 
@@ -278,7 +276,7 @@
             // 
             this.cbbTenSp.FormattingEnabled = true;
             this.cbbTenSp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cbbTenSp.Location = new System.Drawing.Point(195, 86);
+            this.cbbTenSp.Location = new System.Drawing.Point(195, 81);
             this.cbbTenSp.Name = "cbbTenSp";
             this.cbbTenSp.Size = new System.Drawing.Size(250, 21);
             this.cbbTenSp.TabIndex = 24;
@@ -329,9 +327,9 @@
             "Đang giao",
             "Đã giao",
             "Hủy"});
-            this.cbbTrangThai.Location = new System.Drawing.Point(485, 360);
+            this.cbbTrangThai.Location = new System.Drawing.Point(481, 358);
             this.cbbTrangThai.Name = "cbbTrangThai";
-            this.cbbTrangThai.Size = new System.Drawing.Size(213, 29);
+            this.cbbTrangThai.Size = new System.Drawing.Size(218, 29);
             this.cbbTrangThai.TabIndex = 13;
             // 
             // dtpNgayLap
@@ -541,7 +539,6 @@
             this.dgvCTHD.RowTemplate.Height = 24;
             this.dgvCTHD.Size = new System.Drawing.Size(574, 444);
             this.dgvCTHD.TabIndex = 0;
-            //this.dgvCTHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellContentClick);
             // 
             // Column1
             // 

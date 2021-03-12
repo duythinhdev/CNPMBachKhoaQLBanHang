@@ -120,7 +120,6 @@ namespace Project
             {
                 ds.Tables[0].Rows[i]["STT"] = (i + 1).ToString();
             }
-
             dgrHD.Columns["STT"].DisplayIndex = 0;
             dgrHD.Columns["STT"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ShowInTextBox(vt);
@@ -200,6 +199,7 @@ namespace Project
             txtTenSP.Clear();
             status = 0;
         }
+
 
         void LoadTableEmployees()
         {
@@ -298,6 +298,11 @@ namespace Project
                     status = 0;
                 }
             }
+        }
+
+        private void dgvCTHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

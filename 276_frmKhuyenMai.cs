@@ -73,15 +73,6 @@ namespace Project
             flagSave = 3;
             status_button(false);
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            txtIdDiscount.Text = "";
-            txtNameDiscount.Text = "";
-            txtMoneyDiscount.Text = "";
-            status_button(false);
-
-        }
         private void rdbBat_CheckedChanged(object sender, EventArgs e)
         {
             status = 1;
@@ -95,24 +86,24 @@ namespace Project
         private void btnSave_Click(object sender, EventArgs e)
         {
             status_button(true);
-            if (flagSave == 1)
+            switch(flagSave)
             {
-                queryKhuyenMai = "insert into discount (nameDiscount,moneyDiscount,status) values ('" + txtNameDiscount.Text + "','" + txtMoneyDiscount.Text + "','" + status + "')";
-                clsqlbanhang.UpdateData(queryKhuyenMai);
-                dsKhuyenMai();
-            }
-            else if (flagSave == 2)
-            {
-                queryKhuyenMai = "update discount set nameDiscount='" + txtNameDiscount.Text + "', moneyDiscount='" + txtMoneyDiscount.Text + "',status='" + status + "' where idDiscount='" + txtIdDiscount.Text + "'";
-                clsqlbanhang.UpdateData(queryKhuyenMai);
-                dsKhuyenMai();
-            }
-            else if (flagSave == 3)
-            {
-                queryKhuyenMai = "delete from discount where  idDiscount='" + txtIdDiscount.Text + "'";
-                clsqlbanhang.UpdateData(queryKhuyenMai);
-                dsKhuyenMai();
-            }
+                case 1:
+                    queryKhuyenMai = "insert into discount (nameDiscount,moneyDiscount,status) values ('" + txtNameDiscount.Text + "','" + txtMoneyDiscount.Text + "','" + status + "')";
+                    clsqlbanhang.UpdateData(queryKhuyenMai);
+                    dsKhuyenMai();
+                    break;
+                case 2:
+                    queryKhuyenMai = "update discount set nameDiscount='" + txtNameDiscount.Text + "', moneyDiscount='" + txtMoneyDiscount.Text + "',status='" + status + "' where idDiscount='" + txtIdDiscount.Text + "'";
+                    clsqlbanhang.UpdateData(queryKhuyenMai);
+                    dsKhuyenMai();
+                    break;
+                case 3:
+                    queryKhuyenMai = "delete from discount where  idDiscount='" + txtIdDiscount.Text + "'";
+                    clsqlbanhang.UpdateData(queryKhuyenMai);
+                    dsKhuyenMai();
+                    break;
+            }    
             clearData();
 
         }
@@ -126,7 +117,6 @@ namespace Project
         {
             if (this.dtgrKhuyenMai.Columns[e.ColumnIndex].Name == "Column4")
             {
-
                 if (e.Value != null)
                 {
                     e.Value = bool.Parse(e.Value.ToString()) == true ?  "Bật" : "Tắt";
@@ -141,6 +131,27 @@ namespace Project
             btnSua.Enabled = t;
             btnXoa.Enabled = t;
             btnSave.Enabled =  !t;
+            btnClear.Enabled = t;
+           
+            
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtIdDiscount.Text = "";
+            txtNameDiscount.Text = "";
+            txtMoneyDiscount.Text = "";
+        }
+
+        private void KhuyenMai_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgHoiThoat = new DialogResult();
+            dlgHoiThoat = MessageBox.Show("Bạn có chắc thoát không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (dlgHoiThoat == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+                e.Cancel = true;
         }
     }
 }

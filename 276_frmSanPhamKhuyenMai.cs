@@ -46,6 +46,7 @@ namespace Project
         private void btnThem_Click(object sender, EventArgs e)
         {
             flagSave = 1;
+            status_button(false);
         }
 
         private void dgrSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -57,7 +58,7 @@ namespace Project
         }
         public void sanPhamKhuyenMai()
         {
-            sql = "SELECT DISTINCT products.idproduct, products.name,products.price FROM products LEFT JOIN product_discount ON products.idproduct = product_discount.idProduct ";
+            sql = "SELECT DISTINCT products.idproduct, products.name,products.price FROM products INNER JOIN product_discount ON products.idproduct = product_discount.idProduct ";
             ds = clsqlbanhang.LoadData(sql);
             dgrKhuyenMai.DataSource = ds.Tables[0];
         }
@@ -65,7 +66,9 @@ namespace Project
         private void cbbKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
         {
             string cbbKhuyenMaiLoad = cbbKhuyenMai.Text;
-            sql = "select DISTINCT products.idproduct, products.name,products.price FROM discount,product_discount,products  where nameDiscount=N'" + cbbKhuyenMaiLoad+ "' and discount.idDiscount = product_discount.idDiscount and products.idproduct = product_discount.idProduct ";
+            sql = "select DISTINCT products.idproduct, products.name,products.price " +
+                "FROM discount,product_discount,products  where nameDiscount=N'" + cbbKhuyenMaiLoad+ "' " +
+                "and discount.idDiscount = product_discount.idDiscount and products.idproduct = product_discount.idProduct ";
             showValueFollowCbbKhuyenMai(sql);
         }
         public void showValueFollowCbbKhuyenMai(string sql)
@@ -73,7 +76,6 @@ namespace Project
             ds = clsqlbanhang.LoadData(sql);
             dgrKhuyenMai.DataSource = ds.Tables[0];
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             sql = "SELECT  * FROM  product_discount WHERE  idProduct = '" + idProducts+ "' and idDiscount ='"+idDiscount+"'";
@@ -81,33 +83,58 @@ namespace Project
             int checkValue = ds.Tables[0].Rows.Count;
             if (checkValue == 0)
             {
-                if (flagSave == 1)
+                switch (flagSave)
                 {
-                    {
+                    case 1:
                         idDiscount = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
                         sql = "insert into product_discount (idProduct,idDiscount) values ('" + idProducts + "','" + idDiscount + "')";
                         clsqlbanhang.UpdateData(sql);
                         sanPhamKhuyenMai();
-                    }
-                }
-                else if(flagSave == 2)
-                {
-                        idDiscount = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
-                        sql = "DELETE from product_discount WHERE idProduct = '"+ idProducts + "' and idDiscount = '"+idDiscount
-                            +"' ";
+                        break;
+                    case 2:
+                        sql = "DELETE FROM product_discount WHERE idProduct = '" + productes + "'";
                         clsqlbanhang.UpdateData(sql);
                         sanPhamKhuyenMai();
-                }                    
+                        break;
+                }
             }
             else
             {
                 MessageBox.Show("idproduct " + idProducts + " Record Already in database");
             }
+            status_button(true);
         }
-
+        public string productes;
         private void btnXoa_Click(object sender, EventArgs e)
         {
             flagSave = 2;
+            status_button(false);
+        }
+
+        private void dgrKhuyenMai_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idProduct = e.RowIndex;
+            productes = dgrKhuyenMai.Rows[idProduct].Cells[0].Value.ToString();
+            MessageBox.Show(productes);
+        }
+        public void status_button(Boolean t)
+        {
+            btnThem.Enabled = t;
+            btnXoa.Enabled = t;
+            btnLuu.Enabled = !t;
+        }
+
+        private void frmSanPhamKhuyenMai_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgHoiThoat = new DialogResult();
+            dlgHoiThoat = MessageBox.Show("Bạn có chắc thoát không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+            if (dlgHoiThoat == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+                e.Cancel = true;
+
         }
     }
 }

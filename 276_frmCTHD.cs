@@ -64,6 +64,7 @@ namespace Project
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnSua.Enabled = t;
+            cbbTenSp.Enabled = !t;
         }
 
         private void BtnThem_Click(object sender, EventArgs e)
@@ -244,7 +245,8 @@ namespace Project
         {
             float price;
             //float discount;
-            price = float.Parse(txtGiaBan.Text) * int.Parse(txtSL.Text) - float.Parse(txtKhuyenMai.Text);
+            price = float.Parse(txtGiaBan.Text) 
+                - float.Parse(txtKhuyenMai.Text);
             hd_total += price;
             txtThanhTien.Text = hd_total.ToString();
 
@@ -390,7 +392,11 @@ namespace Project
             {
                 moneyDiscount += int.Parse(row["moneyDiscount"].ToString());
             }
-            valueAmount = txtSL.Text != "" ?  int.Parse(txtSL.Text): 1;
+            assignResultMoneyDiscountAndMoneyProduct(moneyDiscount);
+        }
+        public void assignResultMoneyDiscountAndMoneyProduct(int moneyDiscount)
+        {
+            valueAmount = txtSL.Text != "" ? int.Parse(txtSL.Text) : 1;
             resultMultiplyPriceDiscount = valueAmount * moneyDiscount;
             resultMultiplyPriceProduct = valueAmount * int.Parse(listDetailProduct.Tables[0].Rows[0]["price"].ToString());
             txtKhuyenMai.Text = resultMultiplyPriceDiscount.ToString();
