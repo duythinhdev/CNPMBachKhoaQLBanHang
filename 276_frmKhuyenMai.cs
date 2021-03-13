@@ -31,6 +31,7 @@ namespace Project
 
         }
         int status;
+
         public void dsKhuyenMai()
         {
             ds = clsqlbanhang.LoadData("Select * from discount");

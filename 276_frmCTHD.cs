@@ -73,6 +73,7 @@ namespace Project
             status_textbox(false);
             status_button(false);
             txtMaSP.ReadOnly = true;
+            txtTenKhuyenMai.ReadOnly = true;
             status = 1;
             txtMaHĐ.Text = CreateID();
             txtMaHĐ.Focus();
@@ -147,6 +148,8 @@ namespace Project
             txtTenKH.Clear();
             cbbTenNV.Text = "";
             cbbTrangThai.Text = "";
+            cbbTenSp.Text = "";
+            txtTenKhuyenMai.Clear();
             dgvCTHD.Rows.Clear();
             status = 0;
         }

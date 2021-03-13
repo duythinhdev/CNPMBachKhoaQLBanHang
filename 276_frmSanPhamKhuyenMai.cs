@@ -53,8 +53,6 @@ namespace Project
         {
             int idProduct = e.RowIndex;
             idProducts = dgrSanPham.Rows[idProduct].Cells[0].Value.ToString();
-            MessageBox.Show(idProducts);
-
         }
         public void sanPhamKhuyenMai()
         {
@@ -115,14 +113,13 @@ namespace Project
         {
             int idProduct = e.RowIndex;
             productes = dgrKhuyenMai.Rows[idProduct].Cells[0].Value.ToString();
-            MessageBox.Show(productes);
         }
         public void status_button(Boolean t)
         {
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
-            btnHuy.Enabled = !t;
+            btnHuy.Enabled = t;
         }
 
         private void frmSanPhamKhuyenMai_FormClosing(object sender, FormClosingEventArgs e)
@@ -140,7 +137,7 @@ namespace Project
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            status_button(true);
+            status_button(false);
         }
     }
 }
