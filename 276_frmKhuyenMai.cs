@@ -22,14 +22,15 @@ namespace Project
         {
             dsKhuyenMai();
             textBox();
+            status_textbox(true);
         }
         public void textBox()
         {
             dtgrKhuyenMai.ReadOnly = true;
             txtIdDiscount.ReadOnly = true;
+
         }
         int status;
-        DataGridViewCellFormattingEventArgs e;
         public void dsKhuyenMai()
         {
             ds = clsqlbanhang.LoadData("Select * from discount");
@@ -60,18 +61,21 @@ namespace Project
         {
             flagSave = 1;
             status_button(false);
+            status_textbox(false);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             flagSave = 2;
             status_button(false);
+            status_textbox(false);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             flagSave = 3;
             status_button(false);
+            status_textbox(false);
         }
         private void rdbBat_CheckedChanged(object sender, EventArgs e)
         {
@@ -132,8 +136,7 @@ namespace Project
             btnXoa.Enabled = t;
             btnSave.Enabled =  !t;
             btnClear.Enabled = t;
-           
-            
+            btnHuy.Enabled = !t;
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -141,7 +144,12 @@ namespace Project
             txtNameDiscount.Text = "";
             txtMoneyDiscount.Text = "";
         }
-
+        public void status_textbox(Boolean t)
+        {
+            txtIdDiscount.ReadOnly = true;
+            txtNameDiscount.ReadOnly = t;
+            txtMoneyDiscount.ReadOnly = t;
+        }
         private void KhuyenMai_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult dlgHoiThoat = new DialogResult();
@@ -152,6 +160,12 @@ namespace Project
             }
             else
                 e.Cancel = true;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            status_button(true);
+            status_textbox(true);
         }
     }
 }

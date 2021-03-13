@@ -98,7 +98,7 @@ namespace Project
                         break;
                 }
             }
-            else
+            else if(checkValue > 0 )
             {
                 MessageBox.Show("idproduct " + idProducts + " Record Already in database");
             }
@@ -122,6 +122,7 @@ namespace Project
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
+            btnHuy.Enabled = !t;
         }
 
         private void frmSanPhamKhuyenMai_FormClosing(object sender, FormClosingEventArgs e)
@@ -135,6 +136,11 @@ namespace Project
             else
                 e.Cancel = true;
 
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            status_button(true);
         }
     }
 }

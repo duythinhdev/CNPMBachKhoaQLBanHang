@@ -36,6 +36,7 @@ namespace Project
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace Project
             this.lblTien = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNameDiscount = new System.Windows.Forms.TextBox();
-            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
             this.grbText.SuspendLayout();
@@ -128,6 +128,17 @@ namespace Project
             this.grbChucNang.TabIndex = 2;
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức Năng";
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnHuy.Location = new System.Drawing.Point(148, 143);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(87, 40);
+            this.btnHuy.TabIndex = 6;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnClear
             // 
@@ -279,16 +290,6 @@ namespace Project
             this.txtNameDiscount.Name = "txtNameDiscount";
             this.txtNameDiscount.Size = new System.Drawing.Size(173, 20);
             this.txtNameDiscount.TabIndex = 0;
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnHuy.Location = new System.Drawing.Point(148, 143);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(87, 40);
-            this.btnHuy.TabIndex = 6;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // KhuyenMai
             // 

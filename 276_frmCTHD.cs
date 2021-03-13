@@ -23,6 +23,7 @@ namespace Project
         DataSet dssp = new DataSet();
         DataSet dshd = new DataSet();
         DataSet dskh = new DataSet();
+        DataSet listDetailDiscount = new DataSet();
         DataSet listDetailProduct = new DataSet();
         string idcusctomer = "";
         int status = 0;
@@ -31,7 +32,7 @@ namespace Project
 
         string CreateID()
         {
-            
+
             string idbill = "";
             dshd = c.LoadData("Select idbill from bill");
             if (dshd.Tables[0].Rows.Count <= 0)
@@ -39,7 +40,7 @@ namespace Project
                 idbill = "HD001";
             }
             else
-                idbill = "HD00" + (dshd.Tables[0].Rows.Count+1).ToString();
+                idbill = "HD00" + (dshd.Tables[0].Rows.Count + 1).ToString();
 
             return idbill;
         }
@@ -113,21 +114,21 @@ namespace Project
             //Hoa don
             if (status == 1)
             {
-                if(idbill != "")
+                if (idbill != "")
                 {
                     sql = "INSERT INTO bill(idbill,idcustomer,idemployee,date_founded,total,status) VALUES ('" + idbill + "','" + idcustomers + "','" + idemployee + "','" + date + "','" + total + "','" + statuss + "')";
                     UpdateDataTable(sql);
                 }
             }
             //Chi tiet hoa don
-            for (int i = 0; i < dgvCTHD.Rows.Count ; i++)
+            for (int i = 0; i < dgvCTHD.Rows.Count; i++)
             {
                 string idproduct = dgvCTHD.Rows[i].Cells[0].Value.ToString();
                 string price = dgvCTHD.Rows[i].Cells[1].Value.ToString();
                 string quantity = dgvCTHD.Rows[i].Cells[2].Value.ToString();
                 string discount = dgvCTHD.Rows[i].Cells[3].Value.ToString();
                 string detail_total = dgvCTHD.Rows[i].Cells[4].Value.ToString();
-                if(idbill != "")
+                if (idbill != "")
                 {
                     sql = "INSERT INTO bill_detail(idbill,idproduct,price,quantity,discount,total) VALUES('" + idbill + "','" + idproduct + "','" + price + "','" + quantity + "','" + discount + "','" + detail_total + "')";
                     c.UpdateData(sql);
@@ -141,7 +142,7 @@ namespace Project
             txtKhuyenMai.Clear();
             txtGiaBan.Clear();
             txtMaSP.Clear();
-           /* cbbTenSp.Clear();*/
+            /* cbbTenSp.Clear();*/
             txtPhoneKH.Clear();
             txtTenKH.Clear();
             cbbTenNV.Text = "";
@@ -179,7 +180,7 @@ namespace Project
 
         DataSet SearchKH(string phone)
         {
-            dskh = c.LoadData("Select idcustomer,name from customer where phone = '"+phone+"'");
+            dskh = c.LoadData("Select idcustomer,name from customer where phone = '" + phone + "'");
 
             return dskh;
         }
@@ -201,7 +202,7 @@ namespace Project
 
         private void TxtMaSP_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 if (txtMaSP.Text != "")
                 {
@@ -245,7 +246,7 @@ namespace Project
         {
             float price;
             //float discount;
-            price = float.Parse(txtGiaBan.Text) 
+            price = float.Parse(txtGiaBan.Text)
                 - float.Parse(txtKhuyenMai.Text);
             hd_total += price;
             txtThanhTien.Text = hd_total.ToString();
@@ -341,10 +342,10 @@ namespace Project
         public void loadCbbNameProduct()
         {
             sql = "select * from products";
-            listDetailProduct = c.LoadData(sql);
+            listDetailDiscount = c.LoadData(sql);
             cbbTenSp.DisplayMember = "name";
             cbbTenSp.ValueMember = "idproduct";
-            cbbTenSp.DataSource = listDetailProduct.Tables[0];
+            cbbTenSp.DataSource = listDetailDiscount.Tables[0];
         }
 
         private void cbbTenSp_SelectedIndexChanged(object sender, EventArgs e)
@@ -353,20 +354,29 @@ namespace Project
             sql = "SELECT discount.moneyDiscount,products.idproduct,discount.nameDiscount,products.price " +
                 "from product_discount,discount,products where products.name=N'" + cbbNameProductLoad + "'  " +
                 "and discount.idDiscount = product_discount.idDiscount and  product_discount.idProduct = products.idproduct";
-            getValueDetailBill(sql);   
+            string sql2;
+            sql2 = "SELECT * from products where products.name=N'" + cbbNameProductLoad + "'";
+            getValueDetailBillDiscount(sql);
+            getValueProduct(sql2);
         }
-        public void getValueDetailBill(string sql)
+        public void getValueProduct(string sql)
+        {
+            listDetailProduct = c.LoadData(sql);
+            txtMaSP.Text = listDetailProduct.Tables[0].Rows[0]["idproduct"].ToString();
+            txtGiaBan.Text = listDetailProduct.Tables[0].Rows[0]["price"].ToString();
+        }
+        public void getValueDetailBillDiscount(string sql)
         {
             int amout = 1;
-            string nameDiscount= "";
+            string nameDiscount = "";
             int sumMoneyDiscount = 0;
-            listDetailProduct = c.LoadData(sql);
-            fetchValuedetailBill(sumMoneyDiscount,nameDiscount, amout, listDetailProduct);
+            listDetailDiscount = c.LoadData(sql);
+            fetchValuedetailBill(sumMoneyDiscount, nameDiscount, amout, listDetailDiscount);
         }
         public int valueAmount;
         private int resultMultiplyPriceDiscount;
         private int resultMultiplyPriceProduct;
-        public void fetchValuedetailBill(int sumMoneyDiscount,string nameDiscount, int amout, DataSet listNameProduct)
+        public void fetchValuedetailBill(int sumMoneyDiscount, string nameDiscount, int amout, DataSet listNameProduct)
         {
             txtSL.Text = amout.ToString();
             DataTable dataTable = listNameProduct.Tables[0];
@@ -380,13 +390,11 @@ namespace Project
         public void assignValueDetailBill(int sumMoneyDiscount, DataTable dataTable, string nameDiscount)
         {
             txtKhuyenMai.Text = sumMoneyDiscount.ToString();
-            txtMaSP.Text = dataTable.Rows[0]["idproduct"].ToString();
-            txtGiaBan.Text = dataTable.Rows[0]["price"].ToString();
             txtTenKhuyenMai.Text = nameDiscount;
-        } 
+        }
         private void txtSL_KeyUp(object sender, KeyEventArgs e)
         {
-            DataTable dataTable = listDetailProduct.Tables[0];
+            DataTable dataTable = listDetailDiscount.Tables[0];
             int moneyDiscount = 0;
             foreach (DataRow row in dataTable.Rows)
             {
@@ -404,5 +412,3 @@ namespace Project
         }
     }
 }
-
-

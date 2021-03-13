@@ -47,6 +47,7 @@ namespace Project
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgrSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrKhuyenMai)).BeginInit();
             this.grbChucNang.SuspendLayout();
@@ -172,6 +173,7 @@ namespace Project
             // 
             // grbChucNang
             // 
+            this.grbChucNang.Controls.Add(this.btnHuy);
             this.grbChucNang.Controls.Add(this.btnLuu);
             this.grbChucNang.Controls.Add(this.btnXoa);
             this.grbChucNang.Controls.Add(this.btnThem);
@@ -184,7 +186,7 @@ namespace Project
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(84, 102);
+            this.btnLuu.Location = new System.Drawing.Point(22, 102);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 45);
             this.btnLuu.TabIndex = 4;
@@ -211,6 +213,16 @@ namespace Project
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Location = new System.Drawing.Point(144, 102);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 45);
+            this.btnHuy.TabIndex = 5;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // frmSanPhamKhuyenMai
             // 
@@ -253,5 +265,6 @@ namespace Project
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.Button btnHuy;
     }
 }
