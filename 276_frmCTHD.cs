@@ -344,7 +344,7 @@ namespace Project
         }
         public void loadCbbNameProduct()
         {
-            sql = "select * from products";
+            sql = "select DISTINCT  * from products";
             listDetailDiscount = c.LoadData(sql);
             cbbTenSp.DisplayMember = "name";
             cbbTenSp.ValueMember = "idproduct";

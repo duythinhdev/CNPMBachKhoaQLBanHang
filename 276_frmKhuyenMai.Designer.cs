@@ -111,7 +111,7 @@ namespace Project
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(774, 57);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Khuyến Mãi Sản Phẩm";
+            this.label1.Text = "Khuyến Mãi ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grbChucNang

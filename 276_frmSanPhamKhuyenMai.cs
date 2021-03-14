@@ -12,7 +12,7 @@ namespace Project
 {
     public partial class frmSanPhamKhuyenMai : Form
     {
-        clsqlbanhang clsqlbanhang = new clsqlbanhang();
+        clsqlbanhang qlbanhang = new clsqlbanhang();
         DataSet ds = new DataSet();
         public string sql;
         public string idProducts;
@@ -32,13 +32,13 @@ namespace Project
         public void LoadProducts()
         {
             sql = "select idproduct,name,idcat,image,quantity,price,status from products";
-            ds = clsqlbanhang.LoadData(sql);
+            ds = qlbanhang.LoadData(sql);
             dgrSanPham.DataSource = ds.Tables[0];
         }
         public void LoadComboboxDiscount()
         {
             sql = "select *  from discount where status = 1";
-            ds = clsqlbanhang.LoadData(sql);
+            ds = qlbanhang.LoadData(sql);
             cbbKhuyenMai.DataSource = ds.Tables[0];
             cbbKhuyenMai.DisplayMember = "nameDiscount";
             cbbKhuyenMai.ValueMember = "idDiscount";
@@ -56,8 +56,8 @@ namespace Project
         }
         public void sanPhamKhuyenMai()
         {
-            sql = "SELECT DISTINCT products.idproduct, products.name,products.price FROM products INNER JOIN product_discount ON products.idproduct = product_discount.idProduct ";
-            ds = clsqlbanhang.LoadData(sql);
+            sql = "SELECT DISTINCT products.idproduct, products.name,products.price FROM products,product_discount,discount where products.idproduct = product_discount.idProduct ";
+            ds = qlbanhang.LoadData(sql);
             dgrKhuyenMai.DataSource = ds.Tables[0];
         }
 
@@ -71,34 +71,34 @@ namespace Project
         }
         public void showValueFollowCbbKhuyenMai(string sql)
         {
-            ds = clsqlbanhang.LoadData(sql);
+            ds = qlbanhang.LoadData(sql);
             dgrKhuyenMai.DataSource = ds.Tables[0];
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             sql = "SELECT  * FROM  product_discount WHERE  idProduct = '" + idProducts+ "' and idDiscount ='"+idDiscount+"'";
-            ds = clsqlbanhang.LoadData(sql);
+            ds = qlbanhang.LoadData(sql);
             int checkValue = ds.Tables[0].Rows.Count;
+            idDiscount = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
             if (checkValue == 0)
             {
                 switch (flagSave)
                 {
                     case 1:
-                        idDiscount = int.Parse(cbbKhuyenMai.SelectedValue.ToString());
                         sql = "insert into product_discount (idProduct,idDiscount) values ('" + idProducts + "','" + idDiscount + "')";
-                        clsqlbanhang.UpdateData(sql);
+                        qlbanhang.UpdateData(sql);
                         sanPhamKhuyenMai();
                         break;
                     case 2:
                         sql = "DELETE FROM product_discount WHERE idProduct = '" + productes + "'";
-                        clsqlbanhang.UpdateData(sql);
+                        qlbanhang.UpdateData(sql);
                         sanPhamKhuyenMai();
                         break;
                 }
             }
-            else if(checkValue > 0 )
+            else if(checkValue != 0 )
             {
-                MessageBox.Show("idproduct " + idProducts + " Record Already in database");
+                MessageBox.Show("idproduct =  " + idProducts + " đã tồn tại trong bảng");
             }
             status_button(true);
         }
