@@ -247,9 +247,9 @@ namespace Project
             this.lblIdKhuyenMai.AutoSize = true;
             this.lblIdKhuyenMai.Location = new System.Drawing.Point(11, 22);
             this.lblIdKhuyenMai.Name = "lblIdKhuyenMai";
-            this.lblIdKhuyenMai.Size = new System.Drawing.Size(77, 13);
+            this.lblIdKhuyenMai.Size = new System.Drawing.Size(81, 13);
             this.lblIdKhuyenMai.TabIndex = 7;
-            this.lblIdKhuyenMai.Text = "ID Khuyến Mãi";
+            this.lblIdKhuyenMai.Text = "Mã Khuyến Mãi";
             // 
             // txtIdDiscount
             // 
@@ -280,9 +280,9 @@ namespace Project
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 13);
+            this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Sản Phẩm Khuyến Mãi";
+            this.label2.Text = "Tên Khuyến Mãi";
             // 
             // txtNameDiscount
             // 

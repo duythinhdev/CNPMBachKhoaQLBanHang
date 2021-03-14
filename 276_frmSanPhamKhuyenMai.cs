@@ -53,6 +53,7 @@ namespace Project
         {
             int idProduct = e.RowIndex;
             idProducts = dgrSanPham.Rows[idProduct].Cells[0].Value.ToString();
+            MessageBox.Show(idProducts);
         }
         public void sanPhamKhuyenMai()
         {
@@ -96,7 +97,7 @@ namespace Project
                         break;
                 }
             }
-            else if(checkValue != 0 )
+            else
             {
                 MessageBox.Show("idproduct =  " + idProducts + " đã tồn tại trong bảng");
             }
@@ -119,7 +120,7 @@ namespace Project
             btnThem.Enabled = t;
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
-            btnHuy.Enabled = t;
+            btnHuy.Enabled = !t;
         }
 
         private void frmSanPhamKhuyenMai_FormClosing(object sender, FormClosingEventArgs e)
@@ -137,7 +138,7 @@ namespace Project
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            status_button(false);
+            status_button(true);
         }
     }
 }

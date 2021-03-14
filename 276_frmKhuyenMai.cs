@@ -20,6 +20,7 @@ namespace Project
 
         private void KhuyenMai_Load(object sender, EventArgs e)
         {
+            
             dsKhuyenMai();
             textBox();
             status_textbox(true);
